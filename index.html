@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Musicland — Clase de Español A1–A2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alice&family=Rajdhani:wght@600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ambiente -->
+<div class="nota" style="top:16%;left:6%">♪</div>
+<div class="nota" style="top:26%;left:90%;animation-delay:.9s">♫</div>
+<div class="nota" style="top:58%;left:4%;animation-delay:1.6s;color:var(--violeta)">♩</div>
+<div class="nota" style="top:20%;left:64%;animation-delay:2.2s;color:var(--dorado)">♪</div>
+<div class="nota" style="top:66%;left:93%;animation-delay:.4s">♬</div>
+<div class="naipe" style="top:38%;left:8%;color:var(--rojo)">♥</div>
+<div class="naipe" style="top:48%;left:88%;color:var(--ink);animation-delay:1.2s">♠</div>
+<div class="naipe" style="top:14%;left:40%;color:var(--dorado);animation-delay:2s">♦</div>
+<div id="wonder"><svg viewBox="0 0 1200 120" preserveAspectRatio="xMidYMax slice">
+  <!-- pentagrama -->
+  <g stroke="#c9b48a" stroke-width="1.5" opacity=".6">
+    <line x1="0" y1="18" x2="1200" y2="18"/><line x1="0" y1="26" x2="1200" y2="26"/><line x1="0" y1="34" x2="1200" y2="34"/><line x1="0" y1="42" x2="1200" y2="42"/><line x1="0" y1="50" x2="1200" y2="50"/>
+  </g>
+  <g fill="#8a7460" opacity=".7">
+    <ellipse cx="200" cy="42" rx="6" ry="4.5" transform="rotate(-15 200 42)"/><rect x="205" y="14" width="2" height="27"/>
+    <ellipse cx="700" cy="26" rx="6" ry="4.5" transform="rotate(-15 700 26)"/><rect x="705" y="-2" width="2" height="27"/>
+    <ellipse cx="1020" cy="34" rx="6" ry="4.5" transform="rotate(-15 1020 34)"/><rect x="1025" y="6" width="2" height="27"/>
+  </g>
+  <!-- hongos -->
+  <g transform="translate(120,64)">
+    <rect x="-7" y="14" width="14" height="26" rx="5" fill="#f0e2c8"/>
+    <path d="M-26,16 Q0,-16 26,16 Z" fill="#c9344a"/>
+    <circle cx="-10" cy="6" r="4" fill="#fff"/><circle cx="8" cy="2" r="5" fill="#fff"/>
+  </g>
+  <g transform="translate(1080,70)">
+    <rect x="-6" y="12" width="12" height="22" rx="5" fill="#f0e2c8"/>
+    <path d="M-22,14 Q0,-12 22,14 Z" fill="#7a5ad9"/>
+    <circle cx="-8" cy="5" r="3.5" fill="#fff"/><circle cx="7" cy="2" r="4" fill="#fff"/>
+  </g>
+  <!-- tetera -->
+  <g transform="translate(620,74)" fill="#2e8f8f">
+    <ellipse cx="0" cy="14" rx="22" ry="15"/>
+    <path d="M20,6 Q34,4 34,16 L28,16 Q28,10 18,12 Z"/>
+    <path d="M-20,8 Q-32,-2 -22,-6 Q-16,-2 -14,4 Z"/>
+    <rect x="-6" y="-6" width="12" height="6" rx="3"/>
+    <circle cx="0" cy="-8" r="3.5" fill="#c99a2e"/>
+  </g>
+  <path d="M636,60 q3,-8 -2,-12 M646,62 q4,-9 -1,-14" stroke="#8a7460" stroke-width="2" fill="none" stroke-linecap="round" opacity=".7"/>
+  <!-- tablero -->
+  <g>
+    <rect x="0" y="104" width="1200" height="16" fill="#f0e2c8"/>
+    <g fill="#2e8f8f" opacity=".85">
+      <rect x="0" y="104" width="40" height="16"/><rect x="80" y="104" width="40" height="16"/><rect x="160" y="104" width="40" height="16"/><rect x="240" y="104" width="40" height="16"/><rect x="320" y="104" width="40" height="16"/><rect x="400" y="104" width="40" height="16"/><rect x="480" y="104" width="40" height="16"/><rect x="560" y="104" width="40" height="16"/><rect x="640" y="104" width="40" height="16"/><rect x="720" y="104" width="40" height="16"/><rect x="800" y="104" width="40" height="16"/><rect x="880" y="104" width="40" height="16"/><rect x="960" y="104" width="40" height="16"/><rect x="1040" y="104" width="40" height="16"/><rect x="1120" y="104" width="40" height="16"/>
+    </g>
+  </g>
+</svg></div>
+<div id="gliss"></div>
+<div id="cutin"><div class="big" id="cutinTxt">¡CANCIÓN: CORO DE MUSICLAND!</div><div class="sub">Musicland · Alicia y sus amigos</div></div>
+
+<div id="hud">
+  <div class="emblem"></div>
+  <div class="title">Musicland <span>· Español A1–A2</span></div>
+  <div id="progressWrap"><div id="progressBar"></div><div id="runMark">🐰</div></div>
+  <div id="counter"><b>01</b> / 23</div>
+</div>
+
+<div class="nav" id="prev">‹</div>
+<div class="nav" id="next">›</div>
+
+<div id="deck">
+
+<!-- 0 · PORTADA -->
+<section class="slide" id="s0">
+  <div class="inner">
+    <div class="tagline">Un cuento musical · Alice in Musicland</div>
+    <div class="badge"><svg viewBox="0 0 190 150">
+      <!-- naipe -->
+      <rect x="55" y="14" width="80" height="112" rx="10" fill="#fffcf4" stroke="#c9344a" stroke-width="3"/>
+      <text x="66" y="40" font-size="20" fill="#c9344a">♥</text>
+      <text x="112" y="118" font-size="20" fill="#c9344a">♥</text>
+      <!-- clave de sol simplificada -->
+      <path d="M95,44 C82,52 82,70 95,74 C108,78 112,64 102,60 C92,56 88,72 96,92 C99,100 96,108 90,108" fill="none" stroke="#2e8f8f" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="89" cy="107" r="5" fill="#2e8f8f"/>
+      <!-- relojito -->
+      <circle cx="152" cy="34" r="17" fill="#fffcf4" stroke="#c99a2e" stroke-width="3"/>
+      <line x1="152" y1="34" x2="152" y2="24" stroke="#3a2e2a" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="152" y1="34" x2="160" y2="38" stroke="#3a2e2a" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="152" cy="18" r="3" fill="#c99a2e"/>
+      <!-- notas -->
+      <text x="20" y="60" font-size="22" fill="#7a5ad9">♪</text>
+      <text x="30" y="110" font-size="18" fill="#c99a2e">♫</text>
+    </svg></div>
+    <h1>Bienvenida a <span class="accentR">Musicland</span></h1>
+    <p class="lead">Un conejo con reloj, una fiesta de té y un país hecho de música. Hoy aprendes a cantar la hora ⏰ y a llevar tu mochila invisible 🎒 con Alicia. <span class="kr">오늘은 음악 나라로 떨어진다!</span></p>
+    <div class="qlegend">
+      <span><i style="color:var(--s-cor)">♥</i>corazones</span>
+      <span><i style="color:var(--s-dia)">♦</i>diamantes</span>
+      <span><i style="color:var(--s-tre)">♣</i>tréboles</span>
+      <span><i style="color:var(--s-pic)">♠</i>picas</span>
+      <span><i style="color:var(--s-nota)">♪</i>notas</span>
+    </div>
+    <button class="btn rojo" data-go="1">Caer por el túnel · comenzar ›</button>
+  </div>
+</section>
+
+<!-- 1 · OBJETIVOS -->
+<section class="slide" id="s1">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♥</span>Partitura del día</div>
+    <h2>Tu misión de hoy</h2>
+    <div class="objectives">
+      <div class="obj" style="--qc:var(--s-dia)"><span class="suit">♦</span><span class="mark">VOCAB</span> El reloj, el té y el mundo de Musicland <span class="kr">· 어휘</span></div>
+      <div class="obj" style="--qc:var(--s-tre)"><span class="suit">♣</span><span class="mark">GRAMÁTICA</span> ¿Qué hora es?: el reloj que canta ⏰ <span class="kr">· 시간</span></div>
+      <div class="obj" style="--qc:var(--s-cor)"><span class="suit">♥</span><span class="mark">GRAMÁTICA</span> Tener hambre, sueño, prisa: la mochila invisible 🎒 <span class="kr">· tener 표현</span></div>
+      <div class="obj" style="--qc:var(--s-nota)"><span class="suit">♪</span><span class="mark">LECTURA</span> Dos capítulos del cuento musical <span class="kr">· 독해</span></div>
+      <div class="obj" style="--qc:var(--s-pic)"><span class="suit">♠</span><span class="mark">COMBATE</span> Las cartas soldado y el Jabberwock <span class="kr">· 보스전</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · ROSTER -->
+<section class="slide" id="s2">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♥</span>Expediente · El elenco</div>
+    <h2>Los habitantes de <span class="accentT">Musicland</span></h2>
+    <p class="lead" style="font-size:15px">Toca cada carta del elenco para conocer su secreto. <span class="kr">카드를 눌러 보세요!</span></p>
+    <div class="roster" id="roster"></div>
+  </div>
+</section>
+
+<!-- 3 · VOCABULARIO -->
+<section class="slide" id="s3">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♦</span>Equipo de misión · Vocabulario</div>
+    <h2>Las cartas de la <span class="accentD">baraja</span></h2>
+    <p class="lead" style="font-size:15px">Ocho palabras nuevas para tu baraja. Toca para ver el coreano y un ejemplo. <span class="kr">새 단어 = 새 카드!</span></p>
+    <div class="cards" id="vocabCards"></div>
+  </div>
+</section>
+
+<!-- 4 · INTRUSO -->
+<section class="slide" id="s4">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♠</span>Actividad · Detecta al espía</div>
+    <h2>¿Cuál es <span class="accentR">el intruso</span>?</h2>
+    <p class="lead" style="font-size:15px">Tres palabras son del mismo grupo. Una es un espía de la Reina… ¡encuéntrala! <span class="kr">스파이 단어를 찾아라!</span></p>
+    <div class="scene solo">
+      <svg viewBox="0 0 700 88" preserveAspectRatio="xMidYMax slice">
+        <defs><linearGradient id="bosque" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe8dc"/><stop offset="1" stop-color="#a8d0b8"/></linearGradient></defs>
+        <rect width="700" height="88" fill="url(#bosque)"/>
+        <g transform="translate(120,34)"><rect x="-8" y="18" width="16" height="36" rx="6" fill="#f0e2c8"/><path d="M-30,20 Q0,-16 30,20 Z" fill="#c9344a"/><circle cx="-12" cy="8" r="4.5" fill="#fff"/><circle cx="10" cy="3" r="5.5" fill="#fff"/></g>
+        <g transform="translate(560,40)"><rect x="-7" y="16" width="14" height="32" rx="6" fill="#f0e2c8"/><path d="M-26,18 Q0,-14 26,18 Z" fill="#7a5ad9"/><circle cx="-9" cy="6" r="4" fill="#fff"/><circle cx="9" cy="3" r="4.5" fill="#fff"/></g>
+        <g fill="#8a7460" opacity=".8"><text x="300" y="30" font-size="20">♪</text><text x="380" y="46" font-size="16">♫</text><text x="450" y="26" font-size="18">♩</text></g>
+        <path d="M0,72 Q160,58 340,70 T700,66 L700,88 L0,88 Z" fill="#6fa882"/>
+        <g fill="#c9344a"><circle cx="220" cy="78" r="4"/><circle cx="640" cy="78" r="4"/></g>
+        <g fill="#c99a2e"><circle cx="80" cy="82" r="4"/><circle cx="420" cy="80" r="4"/></g>
+      </svg>
+      <span class="lbl">El bosque que canta</span>
+    </div>
+    <div class="roundtag" id="intrusoRound">Ronda 1 / 3</div>
+    <div class="intruso-words" id="intrusoWords"></div>
+    <div class="feedback" id="intrusoFb"></div>
+  </div>
+</section>
+
+<!-- 5 · LA HORA COGNITIVO -->
+<section class="slide" id="s5">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♣</span>Gramática cognitiva · I</div>
+    <h2>¿Qué hora es?: el <span class="accentT">reloj que canta</span> ⏰</h2>
+    <div class="cog">
+      <div class="panel cogbox">
+        <h3>¿ES o SON?</h3>
+        <div class="coro">
+          <div class="solo"><div class="caras">🎤</div>1:00<br><b>ES la una</b><br>un solista</div>
+          <div class="grupo"><div class="caras">🎤🎤🎤</div>2:00, 3:00…<br><b>SON las tres</b><br>¡un coro!</div>
+        </div>
+        <p class="bigidea">En Musicland el reloj canta la hora. Con la UNA canta un solista: <b>es</b>. Con dos o más… ¡canta el coro!: <b>son</b>. <span class="kr">1시만 es, 나머지는 son!</span></p>
+      </div>
+      <div class="panel cogbox">
+        <h3>El pastel del tiempo 🎂</h3>
+        <svg class="pieclock" viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="52" fill="#fffcf4" stroke="#c99a2e" stroke-width="4"/>
+          <path d="M60,60 L60,8 A52,52 0 0 1 112,60 Z" fill="#c9344a" opacity=".7"/>
+          <path d="M60,60 L112,60 A52,52 0 0 1 60,112 Z" fill="#e08ab5" opacity=".7"/>
+          <line x1="60" y1="60" x2="60" y2="8" stroke="#3a2e2a" stroke-width="2"/>
+          <line x1="60" y1="60" x2="112" y2="60" stroke="#3a2e2a" stroke-width="2"/>
+          <line x1="60" y1="60" x2="60" y2="112" stroke="#3a2e2a" stroke-width="2"/>
+        </svg>
+        <p class="bigidea">La hora es un pastel que dice «¡cómeme!» 🍰<br><span class="g">un pedazo</span> = <b>y cuarto</b> (15) · <span class="g">medio pastel</span> = <b>y media</b> (30)<br>¿falta un pedazo para la hora? = <b>menos cuarto</b> (45)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · TABLA HORA -->
+<section class="slide" id="s6">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♣</span>Gramática cognitiva · II</div>
+    <h2>La canción completa del <span class="accentT">reloj</span></h2>
+    <div class="tables">
+      <table class="conj panel">
+        <caption>⏰ Horas exactas</caption>
+        <tr><th>1:00</th><td><span class="end">Es la</span> una en punto.</td></tr>
+        <tr><th>3:00</th><td><span class="end">Son las</span> tres en punto.</td></tr>
+        <tr><th>12:00</th><td><span class="end">Son las</span> doce.</td></tr>
+        <tr><th>¿…?</th><td>¿Qué hora <span class="end">es</span>?</td></tr>
+      </table>
+      <table class="conj panel">
+        <caption>🍰 Con pedazos de pastel</caption>
+        <tr><th>4:15</th><td>Son las cuatro <span class="end">y cuarto</span>.</td></tr>
+        <tr><th>4:30</th><td>Son las cuatro <span class="end">y media</span>.</td></tr>
+        <tr><th>4:45</th><td>Son las cinco <span class="end">menos cuarto</span>.</td></tr>
+        <tr><th>evento</th><td>La fiesta es <span class="end">a las</span> seis.</td></tr>
+      </table>
+    </div>
+    <p class="notice">💡 Truco cognitivo: para decir CUÁNDO es un evento, usa la flechita <b>a</b>: «La fiesta es <b>a las</b> seis», «¿<b>A qué hora</b> es tu clase?». Y para el día: <b>de la mañana</b> 🌅, <b>de la tarde</b> ☀️, <b>de la noche</b> 🌙.</p>
+  </div>
+</section>
+
+<!-- 7 · EL RELOJ DEL CONEJO -->
+<section class="slide" id="s7">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♦</span>Actividad · ¡Tic, tac, canta!</div>
+    <h2>El reloj del <span class="accentR">Conejo</span> 🐰</h2>
+    <p class="lead" style="font-size:15px">El reloj gigante marca una hora… ¿cómo la canta el coro? <span class="kr">시계를 보고 시간을 고르세요!</span></p>
+    <div class="forge-count" id="clockCount">Campanada 1 / 6</div>
+    <div class="clockwrap">
+      <svg viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="88" fill="#fffcf4" stroke="#c99a2e" stroke-width="6"/>
+        <circle cx="100" cy="100" r="78" fill="none" stroke="#e0cba8" stroke-width="1.5"/>
+        <g fill="#3a2e2a" font-family="Alice, serif" font-size="17" text-anchor="middle">
+          <text x="100" y="34">12</text><text x="134" y="44">1</text><text x="159" y="69">2</text><text x="168" y="106">3</text><text x="159" y="141">4</text><text x="134" y="166">5</text><text x="100" y="176">6</text><text x="66" y="166">7</text><text x="41" y="141">8</text><text x="32" y="106">9</text><text x="41" y="69">10</text><text x="66" y="44">11</text>
+        </g>
+        <g id="hHand"><line x1="100" y1="100" x2="100" y2="58" stroke="#c9344a" stroke-width="6" stroke-linecap="round"/></g>
+        <g id="mHand"><line x1="100" y1="100" x2="100" y2="36" stroke="#2e8f8f" stroke-width="4" stroke-linecap="round"/></g>
+        <circle cx="100" cy="100" r="6" fill="#c99a2e"/>
+        <text x="100" y="132" font-size="11" text-anchor="middle" fill="#8a7460" font-family="Rajdhani, sans-serif" letter-spacing="2">MUSICLAND</text>
+      </svg>
+    </div>
+    <div class="endings" id="clockOpts"></div>
+    <div class="feedback" id="clockFb"></div>
+  </div>
+</section>
+
+<!-- 8 · LECTURA 1 -->
+<section class="slide" id="s8">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♣</span>Lectura 1 · Capítulo uno</div>
+    <h2>El conejo con reloj</h2>
+    <div class="scene">
+      <svg viewBox="0 0 760 96" preserveAspectRatio="xMidYMax slice">
+        <defs><linearGradient id="tunel" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cfe8dc"/><stop offset=".55" stop-color="#a8c8b8"/><stop offset="1" stop-color="#4a3a6a"/></linearGradient></defs>
+        <rect width="760" height="96" fill="url(#tunel)"/>
+        <circle cx="90" cy="24" r="14" fill="#ffe9a8"/>
+        <path d="M0,74 Q140,58 300,72 L300,96 L0,96 Z" fill="#6fa882"/>
+        <!-- agujero -->
+        <ellipse cx="360" cy="86" rx="70" ry="16" fill="#2e2440"/>
+        <!-- notas saliendo del agujero -->
+        <g fill="#c99a2e"><text x="340" y="60" font-size="18">♪</text><text x="380" y="48" font-size="15">♫</text><text x="410" y="66" font-size="16">♩</text></g>
+        <!-- reloj gigante flotando -->
+        <g transform="translate(600,44)">
+          <circle r="26" fill="#fffcf4" stroke="#c99a2e" stroke-width="4"/>
+          <line x1="0" y1="0" x2="0" y2="-15" stroke="#3a2e2a" stroke-width="3" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="11" y2="6" stroke="#3a2e2a" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="0" cy="-32" r="4" fill="#c99a2e"/>
+        </g>
+        <g fill="#c9344a"><circle cx="150" cy="80" r="4"/><circle cx="250" cy="82" r="4"/></g>
+      </svg>
+      <span class="lbl">El túnel musical</span>
+    </div>
+    <div class="panel reading" style="border-top:none;margin-top:-15px">
+      <p>Alicia está en el jardín cuando ve un conejo blanco con chaqueta y un reloj gigante. —¡<span class="vb">Son las cinco y media</span>! —grita el conejo—. ¡<span class="vb2">Tengo mucha prisa</span>! ¡La fiesta de té <span class="vb">es a las seis</span>!</p>
+      <p>Alicia <span class="vb2">tiene curiosidad</span> y corre detrás del conejo. Los dos caen por un túnel… y llegan a Musicland, un país hecho de música: las flores cantan ópera, el río toca el piano y las nubes son notas blancas. El gato sonriente aparece en un árbol: —Bienvenida, Alicia. Aquí el tiempo siempre canta.</p>
+    </div>
+    <div class="gloss">
+      <span><b>la chaqueta</b> · 재킷</span>
+      <span><b>tener prisa</b> · 서두르다</span>
+      <span><b>detrás de</b> · 뒤에</span>
+      <span><b>el túnel</b> · 터널</span>
+      <span><b>la nube</b> · 구름</span>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · DETECTIVE -->
+<section class="slide" id="s9">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♠</span>Comprensión · Modo detective</div>
+    <h2>El texto no lo dice… <span class="accentR">¡pero tú lo sabes!</span></h2>
+    <div class="roundtag" id="detRound">Pregunta 1 / 4</div>
+    <p class="quiz-q" id="detQ"></p>
+    <div class="options" id="detOpts"></div>
+    <p class="explain" id="detExp"></p>
+  </div>
+</section>
+
+<!-- 10 · TENER COGNITIVO -->
+<section class="slide" id="s10">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♥</span>Gramática cognitiva · III</div>
+    <h2>Tener: la <span class="accentR">mochila invisible</span> 🎒</h2>
+    <div class="cog">
+      <div class="panel cogbox">
+        <h3>La idea</h3>
+        <div class="mochila">🎒</div>
+        <p class="bigidea">En español no ERES tu hambre: la LLEVAS en una mochila invisible.<br><b>Tengo hambre</b> = llevo el hambre conmigo 🥐 <span class="kr">배고픔을 가방에 담아서 가지고 다닌다!</span></p>
+        <div class="mochitems">
+          <span>🥐 hambre</span><span>💧 sed</span><span>😴 sueño</span><span>⏰ prisa</span><span>👻 miedo</span><span>🔥 calor</span><span>❄️ frío</span><span>🎂 … años</span>
+        </div>
+      </div>
+      <div class="panel cogbox">
+        <h3>En Musicland</h3>
+        <p class="bigidea" style="text-align:left;font-size:16px;line-height:2">
+          El conejo <b>tiene prisa</b> ⏰<br>
+          El lirón <b>tiene sueño</b> 😴<br>
+          Alicia <b>tiene hambre</b> 🍰<br>
+          Todos <b>tienen miedo</b> de la Reina 👑<br>
+          Alicia <b>tiene diez años</b> 🎂<br><br>
+          <span class="g">Con mucha fuerza: tengo MUCHA hambre, MUCHO sueño.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · TABLA TENER -->
+<section class="slide" id="s11">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♥</span>Gramática cognitiva · IV</div>
+    <h2>El motor de la mochila: <span class="accentR">TENER</span></h2>
+    <p class="lead" style="font-size:15.5px">Primero el motor (quién lleva la mochila) y después la cosa invisible. <span class="kr">tener + 명사</span></p>
+    <div class="tables">
+      <table class="conj panel">
+        <caption>🎒 TENER (¡irregular!)</caption>
+        <tr><th>yo</th><td><span class="end">tengo</span> hambre</td></tr>
+        <tr><th>tú</th><td><span class="end">tienes</span> sed</td></tr>
+        <tr><th>él / ella / usted</th><td><span class="end">tiene</span> sueño</td></tr>
+        <tr><th>nosotros</th><td><span class="end">tenemos</span> prisa</td></tr>
+        <tr><th>ustedes / ellos</th><td><span class="end">tienen</span> miedo</td></tr>
+      </table>
+      <table class="conj panel">
+        <caption>🎂 ¡También la edad!</caption>
+        <tr><th>¿…?</th><td>¿Cuántos años <span class="end">tienes</span>?</td></tr>
+        <tr><th>yo</th><td><span class="end">Tengo</span> doce años.</td></tr>
+        <tr><th>Alicia</th><td><span class="end">Tiene</span> diez años.</td></tr>
+        <tr><th>⚠️ ojo</th><td>En coreano y en inglés la edad se dice diferente… ¡en español la edad va en la mochila!</td></tr>
+      </table>
+    </div>
+    <p class="notice">💡 Truco cognitivo: si puedes ponerlo en la mochila 🎒 (hambre, sed, sueño, prisa, miedo, frío, calor, años), usa <b>tener</b>… ¡nunca «ser» ni «estar»!</p>
+  </div>
+</section>
+
+<!-- 12 · LA FIESTA DE TÉ -->
+<section class="slide" id="s12">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♦</span>Actividad · La mesa larga</div>
+    <h2>La fiesta de <span class="accentT">té</span> 🍵</h2>
+    <p class="lead" style="font-size:15px">Mira cada situación de la fiesta y elige qué llevan en la mochila invisible. <span class="kr">상황을 보고 고르세요!</span></p>
+    <div class="forge-count" id="teaCount">Invitado 1 / 6</div>
+    <div class="panel" style="width:100%;max-width:700px"><p class="forge-sentence" id="teaSentence" style="font-size:19px"></p></div>
+    <div class="endings" id="teaOpts"></div>
+    <div class="feedback" id="teaFb"></div>
+  </div>
+</section>
+
+<!-- 13 · LECTURA 2 -->
+<section class="slide" id="s13">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♥</span>Lectura 2 · Capítulo dos</div>
+    <h2>La fiesta de té del Sombrerero</h2>
+    <div class="scene">
+      <svg viewBox="0 0 760 96" preserveAspectRatio="xMidYMax slice">
+        <defs><linearGradient id="fiesta" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d9a8"/><stop offset="1" stop-color="#e0c48a"/></linearGradient></defs>
+        <rect width="760" height="96" fill="url(#fiesta)"/>
+        <!-- mesa larga -->
+        <rect x="60" y="62" width="640" height="12" rx="4" fill="#8a5a3a"/>
+        <rect x="90" y="74" width="10" height="22" fill="#6a4428"/><rect x="660" y="74" width="10" height="22" fill="#6a4428"/><rect x="374" y="74" width="10" height="22" fill="#6a4428"/>
+        <!-- teteras y tazas -->
+        <g transform="translate(180,50)" fill="#2e8f8f"><ellipse cx="0" cy="4" rx="14" ry="10"/><path d="M13,0 Q22,-1 22,7 L18,7 Q18,3 12,4 Z"/><rect x="-4" y="-9" width="8" height="5" rx="2"/></g>
+        <g transform="translate(300,56)"><ellipse cx="0" cy="2" rx="9" ry="6" fill="#c9344a"/><rect x="-9" y="-4" width="18" height="7" rx="3" fill="#fffcf4"/></g>
+        <g transform="translate(480,56)"><ellipse cx="0" cy="2" rx="9" ry="6" fill="#7a5ad9"/><rect x="-9" y="-4" width="18" height="7" rx="3" fill="#fffcf4"/></g>
+        <g transform="translate(590,48)"><rect x="-10" y="0" width="20" height="12" rx="2" fill="#e08ab5"/><rect x="-10" y="-5" width="20" height="6" rx="2" fill="#fffcf4"/><circle cx="0" cy="-8" r="3" fill="#c9344a"/></g>
+        <!-- sombrero de copa -->
+        <g transform="translate(120,26)"><rect x="-16" y="10" width="32" height="5" rx="2" fill="#2e8f8f"/><rect x="-11" y="-12" width="22" height="22" fill="#2e8f8f"/><rect x="-11" y="2" width="22" height="6" fill="#c9344a"/></g>
+        <!-- notas y vapor -->
+        <g fill="#8a7460"><text x="350" y="34" font-size="17">♪</text><text x="520" y="28" font-size="15">♫</text><text x="240" y="26" font-size="14">♩</text></g>
+        <circle cx="700" cy="20" r="13" fill="#ffe9a8"/>
+      </svg>
+      <span class="lbl">La mesa larga · 6:00</span>
+    </div>
+    <div class="panel reading" style="border-top:none;margin-top:-15px">
+      <p>En la mesa larga del Sombrerero hay tazas, teteras y pasteles. —¡Bienvenida! ¿<span class="vb2">Tienes hambre</span>? ¿<span class="vb2">Tienes sed</span>? —pregunta el Sombrerero. El lirón <span class="vb2">tiene mucho sueño</span> y duerme dentro de una tetera. <span class="vb">A las seis en punto</span>, todos cantan la canción del té.</p>
+      <p>Pero de repente llega la Reina de Corazones con sus cartas soldado. ¡Todos <span class="vb2">tienen miedo</span>! Alicia respira y canta una canción muy bonita. La reina escucha… y sonríe: —<span class="vb2">Tengo hambre</span>. ¿Hay pastel? Todos comen, bailan y cantan juntos. En Musicland, la música arregla todo.</p>
+    </div>
+    <div class="gloss">
+      <span><b>la tetera</b> · 찻주전자</span>
+      <span><b>dentro de</b> · 안에</span>
+      <span><b>de repente</b> · 갑자기</span>
+      <span><b>respirar</b> · 숨쉬다</span>
+      <span><b>arreglar</b> · 고치다</span>
+    </div>
+  </div>
+</section>
+
+<!-- 14 · ORDENA -->
+<section class="slide" id="s14">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♠</span>Comprensión · La historia</div>
+    <h2>Ordena la historia <span class="accentR">1 → 5</span></h2>
+    <p class="lead" style="font-size:15px">Toca los momentos en el orden correcto. <span class="kr">이야기 순서대로 누르세요!</span></p>
+    <div class="order-list" id="orderList"></div>
+    <div class="feedback" id="orderFb"></div>
+  </div>
+</section>
+
+<!-- 15 · COMBATE 1 -->
+<section class="slide" id="s15">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♠</span>Combate · ¡Guardias!</div>
+    <h2>¡La <span class="accentR">Carta Traviesa</span> roba el reloj!</h2>
+    <div class="battlefield" id="battlefield">
+      <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.85" viewBox="0 0 760 240" preserveAspectRatio="xMidYMax slice">
+        <circle cx="120" cy="40" r="16" fill="#ffe9a8"/>
+        <g fill="#f0e2c8" opacity=".7"><text x="280" y="46" font-size="20">♪</text><text x="480" y="60" font-size="16">♫</text><text x="600" y="36" font-size="18">♩</text></g>
+        <!-- setos del laberinto -->
+        <g fill="#2a3a2a">
+          <rect x="40" y="170" width="130" height="50" rx="8"/>
+          <rect x="590" y="160" width="130" height="60" rx="8"/>
+          <rect x="300" y="185" width="160" height="35" rx="8"/>
+        </g>
+        <g fill="#c9344a"><circle cx="80" cy="176" r="4"/><circle cx="140" cy="180" r="4"/><circle cx="640" cy="168" r="4"/><circle cx="690" cy="176" r="4"/><circle cx="360" cy="190" r="4"/><circle cx="420" cy="192" r="4"/></g>
+      </svg>
+      <div class="battle-top">
+        <span class="enemy-tag">⚠ Enemiga · Soldado de la Reina</span>
+        <div class="party" title="El elenco">
+          <i style="color:var(--s-cor)">♥</i><i style="color:#ffdf8a">♦</i><i style="color:#8fd9c9">♣</i><i style="color:#cbb8f0">♠</i><i style="color:#f0e2c8">♪</i><i style="color:#e08ab5">♫</i>
+        </div>
+      </div>
+      <div class="arena">
+        <div class="aura"></div>
+        <div class="sprite" id="bossSprite">🃏</div>
+        <div class="hplabel">Carta Traviesa · HP</div>
+        <div class="hpbar"><div class="hpfill" id="bossHp"></div></div>
+      </div>
+      <div class="miniSlash" id="miniSlash"></div>
+    </div>
+    <div id="bossGame" style="display:flex;flex-direction:column;align-items:center;gap:12px;width:100%">
+      <p class="quiz-q" id="bossQ"></p>
+      <div class="options" id="bossOpts" style="max-width:520px"></div>
+    </div>
+    <div id="bossWin" class="hidden" style="text-align:center">
+      <p class="victory">🎶 ¡VICTORIA! 🎶</p>
+      <p class="lead">La carta devolvió el reloj y escapó al jardín de la Reina… ¡Y algo enorme ruge en el laberinto! La aventura continúa.</p>
+      <button class="btn gold" data-go="16" style="margin-top:12px">Continuar: Acto II ›</button>
+    </div>
+  </div>
+</section>
+
+<!-- 16 · ACTO II -->
+<section class="slide" id="sInter">
+  <div class="inner">
+    <div class="chapter" style="max-width:640px;width:100%">
+      <div class="acto">✦ Acto II ✦</div>
+      <h1>El concierto en el jardín de la <span class="accentR">Reina</span></h1>
+      <p class="pausa">🍵 Pausa de 5 minutos · 5분 휴식!</p>
+    </div>
+    <div class="objectives" style="max-width:560px">
+      <div class="obj" style="--qc:var(--s-dia)"><span class="suit">♦</span><span class="mark">JUEGO</span> Memoria de naipes <span class="kr">· 기억 게임</span></div>
+      <div class="obj" style="--qc:var(--s-tre)"><span class="suit">♣</span><span class="mark">HABLAR</span> Entrevista con el Gato Sonriente <span class="kr">· 말하기</span></div>
+      <div class="obj" style="--qc:var(--s-cor)"><span class="suit">♥</span><span class="mark">HABLAR</span> ¿Tú también tienes…? <span class="kr">· 비교</span></div>
+      <div class="obj" style="--qc:var(--s-nota)"><span class="suit">♪</span><span class="mark">ESCUCHAR</span> Dictado de la caja musical <span class="kr">· 받아쓰기</span></div>
+      <div class="obj" style="--qc:var(--s-pic)"><span class="suit">♠</span><span class="mark">COMBATE</span> El Jabberwock Desafinado <span class="kr">· 최종 보스</span></div>
+    </div>
+    <button class="btn rojo" data-go="17">Comenzar Acto II ›</button>
+  </div>
+</section>
+
+<!-- 17 · MEMORIA -->
+<section class="slide" id="sMemo">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♦</span>Acto II · Juego</div>
+    <h2>Memoria de <span class="accentD">naipes</span></h2>
+    <p class="lead" style="font-size:15px">Encuentra las parejas: palabra en español ↔ símbolo y coreano. Di la palabra en voz alta cada vez que encuentres una pareja. <span class="kr">짝을 찾으세요!</span></p>
+    <div class="memo-stats" id="memoStats">Parejas: 0 / 6 · Intentos: 0</div>
+    <div class="memo" id="memoGrid"></div>
+    <div class="feedback" id="memoFb"></div>
+  </div>
+</section>
+
+<!-- 18 · ENTREVISTA -->
+<section class="slide" id="sRol">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♣</span>Acto II · Misión de rol</div>
+    <h2>Entrevista con el <span class="accentV">Gato Sonriente</span> 😸</h2>
+    <div class="cog">
+      <div class="panel cogbox">
+        <h3>1 · Preséntate al elenco</h3>
+        <div class="rlist" id="rolList"></div>
+      </div>
+      <div class="panel cogbox">
+        <h3>2 · El gato pregunta 🎙️</h3>
+        <p class="ivq" id="ivQ">Toca el botón y responde en voz alta.</p>
+        <p class="ivhint" id="ivHint"></p>
+        <div style="display:flex;justify-content:center;margin-top:8px">
+          <button class="btn gold" id="ivBtn">🎲 Nueva pregunta</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 19 · ¿TÚ TAMBIÉN TIENES…? -->
+<section class="slide" id="sComp">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♥</span>Acto II · ¿Y tú?</div>
+    <h2>¿Tú también <span class="accentR">tienes</span>…?</h2>
+    <p class="lead" style="font-size:15px">Lee qué llevan los personajes en su mochila invisible, elige tu respuesta y dila en voz alta. <span class="kr">소리 내어 말해 보세요!</span></p>
+    <div class="roundtag" id="compRound">Frase 1 / 5</div>
+    <div class="panel" style="width:100%;max-width:700px"><p class="comp-sent" id="compSent"></p></div>
+    <div class="sort-btns">
+      <button class="sort-btn now" id="compSi">🎒 ¡Yo también tengo!<small>Igual que en Musicland</small></button>
+      <button class="sort-btn past" id="compNo">🙅 Yo no tengo<small>Mochila diferente</small></button>
+    </div>
+    <p class="comp-model" id="compModel"></p>
+  </div>
+</section>
+
+<!-- 20 · DICTADO -->
+<section class="slide" id="sDict">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♪</span>Acto II · Escuchar y escribir</div>
+    <h2>Dictado de la <span class="accentT">caja musical</span> 🎁</h2>
+    <p class="lead" style="font-size:15px">La caja musical canta un mensaje. Escucha, escribe la frase y comprueba. ¡Cuidado con las tildes! <span class="kr">듣고 쓰세요!</span></p>
+    <div class="roundtag" id="dictRound">Mensaje 1 / 5</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+      <button class="btn" id="dictPlay">🔊 Escuchar</button>
+      <button class="btn" id="dictSlow">🐢 Más lento</button>
+    </div>
+    <input type="text" class="dict-in" id="dictIn" placeholder="Escribe el mensaje aquí..." autocomplete="off">
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+      <button class="btn gold" id="dictCheck">🎵 Comprobar</button>
+      <button class="btn" id="dictNext">Siguiente ›</button>
+    </div>
+    <div class="feedback" id="dictFb"></div>
+    <details class="profe"><summary>👩‍🏫 Solo profe: ver frase</summary><span id="dictSecret"></span></details>
+  </div>
+</section>
+
+<!-- 21 · JEFE FINAL -->
+<section class="slide" id="sBoss2">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♠</span>Combate final · El laberinto</div>
+    <h2 id="boss2Title">¡El <span class="accentR">Jabberwock Desafinado</span> ruge!</h2>
+    <div class="battlefield final" id="battlefield2">
+      <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.85" viewBox="0 0 760 240" preserveAspectRatio="xMidYMax slice">
+        <circle cx="620" cy="42" r="20" fill="#f0e2c8"/>
+        <g fill="#ffe9a8" opacity=".7"><text x="200" y="50" font-size="20">♪</text><text x="420" y="36" font-size="16">♫</text><text x="520" y="66" font-size="18">♩</text></g>
+        <g fill="#241a36">
+          <rect x="60" y="150" width="150" height="70" rx="8"/>
+          <rect x="560" y="140" width="150" height="80" rx="8"/>
+        </g>
+        <g fill="#c9344a"><circle cx="100" cy="156" r="4"/><circle cx="170" cy="160" r="4"/><circle cx="610" cy="148" r="4"/><circle cx="670" cy="154" r="4"/></g>
+        <path d="M0,214 Q200,200 420,212 T760,208 L760,240 L0,240 Z" fill="#1e1428"/>
+      </svg>
+      <div class="battle-top">
+        <span class="enemy-tag">⚠ Enemigo · Canta horrible</span>
+        <div class="party" title="El elenco">
+          <i style="color:var(--s-cor)">♥</i><i style="color:#ffdf8a">♦</i><i style="color:#8fd9c9">♣</i><i style="color:#cbb8f0">♠</i><i style="color:#f0e2c8">♪</i><i style="color:#e08ab5">♫</i>
+        </div>
+      </div>
+      <div class="arena">
+        <div class="aura" style="background:radial-gradient(circle, rgba(122,90,217,.5), transparent 65%)"></div>
+        <div class="sprite" id="boss2Sprite">🐉</div>
+        <div class="hplabel">Jabberwock · HP</div>
+        <div class="hpbar seg8"><div class="hpfill" id="boss2Hp"></div></div>
+      </div>
+      <div class="miniSlash" id="miniSlash2"></div>
+    </div>
+    <div id="boss2Game" style="display:flex;flex-direction:column;align-items:center;gap:12px;width:100%">
+      <p class="quiz-q" id="boss2Q"></p>
+      <div class="options" id="boss2Opts" style="max-width:520px"></div>
+    </div>
+    <div id="boss2Win" class="hidden" style="text-align:center">
+      <p class="victory">🏆 ¡VICTORIA TOTAL! 🏆</p>
+      <p class="lead">Con el gran coro de Musicland, el Jabberwock afinó por fin… ¡y ahora canta de tenor en el concierto de la Reina! 🎤</p>
+      <button class="btn gold" data-go="22" style="margin-top:12px">Gran final ›</button>
+    </div>
+  </div>
+</section>
+
+<!-- 22 · FINAL -->
+<section class="slide" id="s22">
+  <div class="inner">
+    <div class="eyebrow"><span class="qz">♥</span>Gran final</div>
+    <h2>El concierto <span class="accentT">final</span> 🎶</h2>
+    <p class="lead" style="font-size:15.5px">Última nota del cuento: escribe tu partitura con el reloj ⏰ y la mochila invisible 🎒. <span class="kr">문장을 써 보세요!</span></p>
+    <div class="write panel" style="width:100%">
+      <label>⏰ EL RELOJ · Tu tiempo real</label>
+      <input type="text" placeholder="1. Mi clase de español es a las...">
+      <input type="text" placeholder="2. Yo voy a dormir a las...">
+      <label style="margin-top:8px">🎒 LA MOCHILA INVISIBLE · Tú, ahora mismo</label>
+      <input type="text" placeholder="3. Yo tengo ... años.">
+      <input type="text" placeholder="4. Ahora tengo... (hambre / sueño / sed / frío...)">
+      <input type="text" placeholder="5. Tengo miedo de...">
+    </div>
+    <p class="notice">El reloj canta (<b>es la una / son las dos</b>) y la mochila lleva lo invisible (<b>tengo hambre, sueño, diez años</b>). ¡Telón y aplausos, artista de Musicland! 🎭</p>
+  </div>
+</section>
+
+</div>
+
+<div id="dots"></div>
+  <script src="script.js"></script>
+</body>
+</html>
